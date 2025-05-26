@@ -1,19 +1,19 @@
-# Ex.No:9(B) BYTE ARRAY I/O
+# Ex.No:9(A)  DATA I/O STREAM
 ## AIM:
-To create a java program to write data using ByteArrayOutputStream.
-
+To create a Java Program to store a String Value in a file "testout.txt" using Data Output Stream.
 
 ## ALGORITHM :
-1.	The user enters a string (data), followed by two integers (start and length) specifying the starting position and number of characters to write.
-2.	The string data is converted to a byte array (array).
-3.	Using ByteArrayOutputStream, it writes length bytes from array, starting at start.
-4.	The written data is retrieved as a string (streamData) and displayed, showing the original input and the specific segment written to the stream.
-5.	Any exceptions are caught and handled, displaying stack trace information if an error occurs.
+1.  The program creates testout.txt and initializes FileOutputStream and DataOutputStream. It prompts the user to enter a string, writes it to testout.txt using writeUTF(), and then closes the streams.
+2.	It reopens testout.txt with FileInputStream and DataInputStream, reads the stored string using readUTF(), displays it, and then closes the streams.
+3.	It deletes testout.txt.
+4.	After deletion, it tries to read an integer from testout.txt, which causes an error because the file no longer exists.
+5.	The program catches and displays an IOException message if any file-related error occurs, including the attempt to read after deletion.
+
 
 ## PROGRAM:
  ```
 
-Program to implement a BYTE ARRAY I/O using Java
+Program to implement a DATA I/O STREAM using Java
 Developed by: Prakasam P
 RegisterNumber: 212222040118
 
@@ -21,39 +21,17 @@ RegisterNumber: 212222040118
 
 ## Sourcecode.java:
 ```java
-import java.io.*;
-import java.util.*;
-public class Main {
-    public static void main(String[] args) {
-
-    
-     Scanner sc=new Scanner(System.in);
-     String data =sc.nextLine();
-    try {
-      ByteArrayOutputStream out = new ByteArrayOutputStream();
-      byte[] array = data.getBytes();
-
-      out.write(array,2,7);
-
-      String streamData = out.toString();
-      System.out.println("Original data: " + data);
-      System.out.println("Output stream: " + streamData);
-      out.close();
-    }
-
-    catch(Exception e) {
-      e.getStackTrace();
-    }
-  }
-}
+FileOutputStream fout=new FileOutputStream("testout.txt");    
+DataOutputStream dout=new DataOutputStream(fout);
+                 dout.writeUTF("This is a file created by using Data Stream"); 
+                 dout.close();    
+                 fout.close();
+                 System.out.println("Successfully Completed");
 ```
 
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/a47dcf53-2f26-4255-9179-79c3de038e47)
+![image](https://github.com/user-attachments/assets/e1d17edb-9af8-4665-9be3-f9d2f09e106f)
 
 ## RESULT:
-Thus, java program to write data using ByteArrayOutputStream was executed and verified successfully.
-
-
-
+Thus the Java Program to store a String Value in a file "testout.txt" using DataOutputStream was executed and verified successfully.
