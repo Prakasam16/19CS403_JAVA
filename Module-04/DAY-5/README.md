@@ -1,84 +1,97 @@
-# Ex.No:4(D) FINAL & STATIC IN JAVA
-
+# Ex.No:4(E)  PARAMETERIZED CONSTRUCTOR
 ## AIM:
-   To create a Java program to perform final & static keyword for below situation Employee object contains member 'Emp_Id'. It contains object named name, which contains its own informations such as Fname, Mname, Lname.
- 
+To write a parameterized constructor in the Laptop class given below that initializes the brand , price class field with the string "Apple" and 42500.75.
+
+Call the getBrand() method in the main method of the Sample class  and store the value of the brand in a variable, and print the value.
+
+Call the getPrice() method in the main method of the Sample class  and store the value of the price in a variable, and print the value.
+
 ## ALGORITHM :
-1.	Start the Program.
-2.	Define class `Name`:
--	a) Declare three `String` variables: `Fname`, `Mname`, and `Lname`
--	b) Define method `dispName(String fn, String mn, String ln)`:
--	i) Print the full name using the passed parameters `fn`, `mn`, and `ln`
-3.	Define class `Employee`:
--	a) Declare an integer variable `Emp_Id`
--	b) Create an instance of `Name` called `obj`
--	c) Define method `disp(int id)`:
--	i) Print the employee ID
--	ii) Create a new `Name` object and call `dispName("B", "Leo", "John")` to display the name
-4.	Define `Main` class with `main` method:
--	a) Create an `Employee` object `emp`
--	b) Call `emp.disp(101)` to display the employee details
-5.	End
 
+1. Start
 
+2. Define class Laptop:
 
+    Declare a String variable brand.
+    
+    Declare a double variable price.
+    
+    Create a constructor Laptop():
+    
+    Set brand to "Apple".
+    
+    Set price to 42500.75.
 
+3. Define a method getBrand():
+
+    Return the value of brand.
+    
+    Define a method getPrice():
+    
+    Return the value of price.
+
+4. Define class Sample:
+
+    In the main method:
+    
+        Create an object myLaptop of class Laptop.
+        
+        Call getBrand() method using myLaptop and store the result in laptopBrand.
+        
+        Print laptopBrand.
+        
+        Call getPrice() method using myLaptop and store the result in laptopPrice.
+        
+        Print laptopPrice.
+
+5. End
 
 
 ## PROGRAM:
  ```
-
-Program to implement a final & Static using Java
+/*
+Program to implement a Parameterized Constructor Using Java
 Developed by: Prakasam P
-RegisterNumber:  212222040118
-
+RegisterNumber: 212222040118
+*/
 ```
 
 ## Sourcecode.java:
 
-
 ```java
-class Name {
-    String Fname;
-    String Mname;
-    String Lname;
+class Laptop {
+    String brand;
+    double price;
+    public Laptop() {
+        this.brand = "Apple";
+        this.price = 42500.75;
+    }
 
-    void dispName(String fn, String mn, String ln) {
-        Fname = fn;
-        Mname = mn;
-        Lname = ln;
-        System.out.println(Fname + " " + Mname + " " + Lname);
+    public String getBrand() {
+        return brand;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
-
-class Employee {
-    int Emp_Id;
-    Name obj = new Name();
-
-    void dispName(int id, String fn, String mn, String ln) {
-        Emp_Id = id;
-        System.out.println(Emp_Id);
-        obj.dispName(fn, mn, ln);
-    }
-}
-
-public class Main {
+public class Sample {
     public static void main(String[] args) {
-        Employee e = new Employee();
-        e.dispName(101, "B", "Leo", "John");
+        Laptop myLaptop = new Laptop();
+        String laptopBrand = myLaptop.getBrand();
+        System.out.println(laptopBrand);
+        double laptopPrice = myLaptop.getPrice();
+        System.out.println(laptopPrice);
     }
 }
-
 ```
-
-
-
-
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/b03b59aa-7467-40df-aeac-6155bd34712f)
+![image](https://github.com/user-attachments/assets/dd258499-d8e9-427a-97a0-9157d4055a30)
 
 
 ## RESULT:
-Thus, the java program to perform final & static keyword was executed successfully.
-****
+Thus, the  java program was successfully parameterized constructor in the Laptop class given below that initializes the brand , price class field with the string "Apple" and 42500.75.
+
+ 
+
